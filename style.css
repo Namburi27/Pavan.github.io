@@ -233,6 +233,7 @@ font-size: 30px;
   width:fit-content;
   padding-top: 40px;
   text-align: center;
+  align-items: 100%;
 }
 .social{
   padding: 40px 0;
@@ -311,11 +312,15 @@ font-size: 30px;
   padding-right: 20px;
   font-size: 25px;
   border-style: none;
-  color: white;
+  color: rgb(249, 248, 249);
+  border-radius: 10px;
 }
 .box:hover{
-  box-shadow: 0 4px 15px 0 rgba(244, 243, 246, 0.75);
-  background-color:rgba(120, 11, 229, 0.759);
+  box-shadow: 0 4px 15px 0 rgb(3, 228, 248);
+  background-color:white;
+  text-decoration: solid;
+  color: black;
+
 }
 .certificates{
  color: white;
