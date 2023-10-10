@@ -1,108 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name    = "color-scheme" content = "light dark" />
+    <meta name="color-scheme" content="light dark" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>My Portfolio</title>
 </head>
-<section id="HOME">
-    <img src="signature.png">
-        <div id="navbar">
-            <nav>
+<body>
+    <section id="HOME">
+        <div class="home">
+                <img src="signature.png" class="sign">
+            <div class="myimage">
+                <img src="image.jpg" alt="my image" class="my_image">
+            </div>
+            <div id="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="#HOME"><i class="fas fa-home fa-2x"></i></a></li>
+                        <li><a href="#Education"><i class="fas fa-graduation-cap fa-2x"></i></a></li>
+                        <li><a href="#SKILLS    "><i class="fas fa-lightbulb fa-2x"></i></a></li>
+                        <li><a href="#Projects"><i class="fas fa-cogs fa-2x"></i></a></li>
+                        <li><a href="#Certificates"><i class="fas fa-certificate fa-2x"></i></a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope fa-2x"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="menubtn">
+                <img src="menu.png" id="menu">
+            </div>
+            <script>
+                var menubtn = document.getElementById("menubtn")
+                var navbar = document.getElementById("navbar")
+                var menu = document.getElementById("menu")
+                navbar.style.right = "-10%";
+                menubtn.onclick = function () {
+                    if (navbar.style.right == "-10%") {
+                        navbar.style.right = "0";
+                        menu.src = "cross.png";
+                    }
+                    else {
+                        navbar.style.right = "-10%";
+                        menu.src = "menu.png";
+                    }
+                }
+                var scroll = new SmoothScroll('a[href*="#"]', {
+                    speed: 1000,
+                    speedAsDuration: true
+                });
+            </script>
+            <div class="info">
+                <h1>Hi I am Namburi PavanKumar</h1>
+                <p>Student at GMR Institute of Technology,undertaking my Bachelor in ECE.</p>
+                <p>Love to explore how things work behind the scenes in software and applications.</p>
+            </div>
+            <div class="social">
                 <ul>
-                    <li><a href="#HOME">Home</a></li>
-                    <li><a href="#Education">Education</a></li>
-                    <li><a href="#SKILLS">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#Certificates">Courses</a></li>
-                    <li><a href="#Contact">Work Experience</a></li>
+                    <li>
+                        <a href="https://www.facebook.com/pavankumar.namburi.98">
+                            <i class="fab fa-facebook-f icon"></i> </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/pavan_10.24/"><i class="fab fa-instagram icon"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/pavan-kumar-411696213/"><i
+                                class="fab fa-linkedin-in icon"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Namburi27"><i class="fab fa-github icon"></i></a>
+                    </li>
                 </ul>
-            </nav>
+            </div>
         </div>
-        <div id="menubtn">
-            <img src="menu.png" id="menu">
+    </section>
+
+    <!-- Education -->
+
+    <section id="Education">
+        <div class="education">
+        <h1>Education</h1>
+            <div class=" class one">
+                <img src="https://img.jagranjosh.com/images/2022/June/962022/GMR.jpg" alt="GMRIT">
+                <div class="marks">
+                    <p class="college">GMR INSTITUTE OF TECHNOLOGY, RAJAM</p>
+                    <p class="branch">ELECTRONICS & COMMUNICATION ENGINEERING</p>
+                    <p class="score"><span>CGPA: </span>8.84</p>
+                </div>
+            </div>
+
+            <div class="class two">
+                <img src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/96826ff7159f66e0ab8ef983b6ca3857"
+                    alt="Narayana">
+                <div class="marks">
+                    <p class="college">NARAYANA JUNIOR COLLEGE</p>
+                    <p class="branch">VISHAKAPATANAM</p>
+                    <p class="score"><span>CGPA: </span>9.63</p>
+                </div>
+            </div>
+            <div class="class three">
+                <img src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/96826ff7159f66e0ab8ef983b6ca3857"
+                    alt="GMRIT">
+                <div class="marks">
+                    <p class="college">NARAYANA HIGH SCHOOL</p>
+                    <p class="branch">VISHAKAPATANAM</p>
+                    <p class="score"><span>CGPA: </span>9.20</p>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('show');
+                            } else {
+                                entry.target.classList.remove('show');
+                            }
+                        });
+                    });
+
+                    const hiddenElements = document.querySelectorAll('.one, .two, .three');
+                    hiddenElements.forEach((el) => observer.observe(el));
+                });
+            </script>
         </div>
-        <script>
-            var menubtn = document.getElementById("menubtn")
-            var navbar = document.getElementById("navbar")
-            var menu = document.getElementById("menu")
-            navbar.style.right = "-250px";
-            menubtn.onclick = function(){
-                if(navbar.style.right == "-250px"){
-                    navbar.style.right="0";
-                    menu.src="cross.png";
-                }
-                else{
-                    navbar.style.right = "-250px";
-                    menu.src="menu.png";
-                }
-            }
-            var scroll = new SmoothScroll('a[href*="#"]', {
-            speed: 1000,
-            speedAsDuration: true
-            });
-        </script>
-        <div class="content">
-            <h1>Hi I am Namburi PavanKumar</h1>  
-            <p>Student at GMR Institute of Technology,undertaking my Bachelor in ECE.</p>
-            <p>Love to explore how things work behind the scenes in software and applications.</p>
-        </div>
-        <div class="social">
-            <ul>
-                <li>
-                  <a href="https://www.facebook.com/pavankumar.namburi.98">
-                    <i class="fab fa-facebook-f icon"></i>    </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/pavan_10.24/"><i class="fab fa-instagram icon"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/pavan-kumar-411696213/"><i class="fab fa-linkedin-in icon"></i></a></li>
-                <li>
-                  <a href="https://github.com/Namburi27"><i class="fab fa-github icon"></i></a></li>
-              </ul>
-        </div>
-    </div>
-</section>
-<section id="Education">
-    <body class="background2">
-            <div class="education">
-                <h1>Education</h1>
-            </div>
-            <div class="gmr" style="float: left">
-                <img src="colloge.png" alt="gmr logo" width="200" height="100" width="100%">   
-            </div>
-            <div class="details1">
-                <h1>GMR Institue of Technology</h1>
-                <h2>B.Tech In Electronics and Communications Engineering</h2>
-                <h2>Minor In Computer System Programming</h2>
-                <h3>2020-2024 Present | Andhra Pradesh,India</h3>
-            </div>
-            <div class="narayana" style="float: left">
-                <img src="colloge logo.jpeg" alt="narayana logo" width="200" height="200" width="100%">
-            </div>
-            <div class="details2">
-                <h1>Narayana Junior Colloge</h1>
-                <h2>Intermediate | MPC</h2>
-                <h3>2017-2019-Present | Andhra Pradesh,India</h3>
-            </div>
-    </body>
-</section>
-<section id="SKILLS">
+    </section>
+
+    <!-- skills -->
+
+    <section id="SKILLS">
         <div class="skills1">
             <div class="skills">
                 <h1>Languages and Tools</h1>
-                <p class="outset"></p>
             </div>
             <div class="languages">
-                <div class="lang">
                     <div class="col">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png" alt="python" width="90px" height="90px">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png"
+                            alt="python" width="90px" height="90px">
                         <p>Python</p>
                     </div>
                     <div class="col">
@@ -130,120 +170,157 @@
                         <p>React Js</p>
                     </div>
                     <div class="col">
-                        <img src="github.png" alt="github" width="90px" height="90px" >
+                        <img src="github.png" alt="github" width="90px" height="90px">
                         <p>GitHub</p>
                     </div>
                     <div class="col">
                         <img src="sql.png" alt="sql" width="110px" height="90px">
                         <p>SQL</p>
                     </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects  -->
+
+    <div id="Projects">
+        <h1>Projects</h1>
+    </div>
+    <section id="projects">
+            <div class=container>
+                <div class=card>
+                    <div class=image>
+                        <a href="https://github.com/Namburi27/smart_street_lights"><img  src=s1.jpg></a>
+                    </div>
+                    <h3>Smart Street Light</h3>
+                    <div class=content>
+                        <p>Smart street lights with motion sensors enhance security, save energy, and detect pedestrians for
+                            improved safety and efficiency.</p>
+                    </div>
+                </div>
+                <div class=card>
+                    <div class=image>
+                    <a href="https://namburi27.github.io/Quiz-app/"><img  src=s2.jpg></a>
+                    </div>
+                    <h3>Quiz Application</h3>
+                    <div class=content>
+                        <p>The project is a dynamic quiz application using JavaScript that engages users with interactive
+                            questions and a scoring system.</p>
+                    </div>
+                </div>
+                <div class=card>
+                    <div class=image>
+                        <a href="https://dulcet-sawine-533f51.netlify.app/"><img  src=s3.jpg></a>
+                    </div>
+                    <h3>Myntra Clone</h3>
+                    <div class=content>
+                        <p>This web app resembles Myntra and has been created using HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+                <div class=card>
+                    <div class=image>
+                        <a href="https://namburi27.github.io/login_signup_page/"><img  src=s4.jpg></a>
+                    </div>
+                    <h3>Login Page</h3>
+                    <div class=content>
+                        <p>This web page resembles login and signup and has been created using HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+                <div class=card>
+                    <div class=image>
+                        <a href="https://rainbow-lollipop-bf4eba.netlify.app/ "><img  src=s5.jpeg></a>
+                    </div>
+                    <h3>GitHub User Generator</h3>
+                    <div class=content>
+                        <p>A GitHub user generator is a tool that creates random GitHub user profiles for testing and
+                            development purposes.</p>
+                    </div>
+                </div>
+                <div class=card>
+                    <div class=image>
+                        <a href="https://github.com/Namburi27/LPG-LEAK-DETETCTION"><img  src=s6.jpeg></a>
+                    </div>
+                    <h3>LPG Detection</h3>
+                    <div class=content>
+                        <p>This system is designed to identify and alert users to the presence of liquefied petroleum gas (LPG)
+                            leaks, helping to prevent potential hazards.</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- certificates -->
+
+    <section id="Certificates">
+        <div class="certificates">
+            <h1>Certificates and Achievements</h1>
+        </div>
+        <div class="certificaterow">
+            <div class="certificatecol">
+                <div class="box">
+                    <a href="https://coursera.org/share/282a91745da7249f4f6b63385b07a2a1" class="button">
+                        <img src="http://lofrev.net/wp-content/photos/2016/06/googles_new_logo.png" class="googleimg" width="100%">
+                    </a>
+                    <p>Google It Automation</p>
+                    <p>Completed the certification from coursera
+                    <p>in python</p>
+                </div>
+            </div>
+            <div class="certificatecol">
+                <div class="box">
+                    <a href="https://coursera.org/share/a85a7f1d9d894a5392e4297ea057db38" class="button">
+                        <img src="coursera.png" class="courseraimg" width="100%">
+                    </a>
+                    <p>Python for Data Science, AI & Development</p>
+                    <p>Completed the certification from coursera</p>
+                    <p>in python</p>
+                </div>
+            </div>
+            <div class="certificatecol">
+                <div class="box">
+                    <a href="https://coursera.org/share/ed98a014e5362cad3b843270274718c8" class="button">
+                        <img src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/9c980e99-7289-4844-9017-ebf9b2ec4708.png?auto=format&ixlib=react-9.0.3&w=1246" class="courseraimg" width="100%">
+                    </a>
+                    <p>C for everyone</p>
+                    <p>Completed the certification from coursera </p>
+                    <p>C Programming</p>
+                </div>
+            </div>
+            <div class="certificatecol">
+                <div class="box">
+                    <a href="https://ieeexplore.ieee.org/document/10146712" class="button">
+                        <img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/139828/images/IEEELogo.png" class="courseraimg" width="100%">
+                    </a>
+                    <p>Publication</p>
+                    <p>MR Brain Tumor Classfication Using</p>
+                    <p>Deep Ensemble learning Technique</p>
                 </div>
             </div>
         </div>
+    </section>
+<!--contact -->
+<section id="contact">
+    <div class="container_contact">
+        <div class="header">
+          <h2>Contact</h2>
+       </div>
+        <div class="row">
+            <div class="column">
+                <form action="/action_page.php">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    <label for="pnum">Email</label>
+                    <input type="text" id="pnum" name="phonenumber" placeholder="12345678@gmail.com">
+                    <button class="btn-hover color-1">SUBMIT</button>
+                </form>
+            </div>
+            <div class="column">
+                <img src="mail.gif" alt="mail">
+            </div>
+        </div>
+      </div>
 </section>
-<div class="Projects">
-    <h1>Projects</h1>
-</div>
-<section id="projects"> 
-    <div class = container>
-      <div class = card>
-        <div class = image>
-          <img href = "#" src =s1.jpg>
-        </div>
-        <div class = content>
-          <h3>Smart Street Light</h3>
-          <p>Smart street lights with motion sensors enhance security, save energy, and detect pedestrians for improved safety and efficiency.</p>
-        </div>
-      </div>
-      <div class = card>
-        <div class = image>
-          <img href = "#" src =s2.jpg>
-        </div>
-        <div class = content>
-          <h3>Quiz Application</h3>
-          <p>Smart street lights with motion sensors enhance security, save energy, and detect pedestrians for improved safety and efficiency.</p>
-        </div>
-      </div>
-      <div class = card>
-        <div class = image>
-          <img href = "#" src =s3.jpg>
-        </div>
-        <div class = content>
-          <h3>Myntra Clone</h3>
-          <p>Smart street lights with motion sensors enhance security, save energy, and detect pedestrians for improved safety and efficiency.</p>
-        </div>
-      </div>
-      <div class = card>
-        <div class = image>
-          <img href = "#" src =s4.jpg>
-        </div>
-        <div class = content>
-          <h3>Portfolio</h3>
-          <p>Smart street lights with motion sensors enhance security, save energy, and detect pedestrians for improved safety and efficiency.</p>
-        </div>
-      </div>
-      <div class = card>
-        <div class = image>
-          <img href = "#" src =s5.jpeg>
-        </div>
-        <div class = content>
-          <h3>GitHub User Generator</h3>
-          <p>Smart street lights with motion sensors enhance security, save energy, and detect pedestrians for improved safety and efficiency.</p>
-        </div>
-      </div>
-      <div class = card>
-        <div class = image>
-          <img href = "#" src =s6.jpeg>
-        </div>
-        <div class = content>
-          <h3>LPG Detection</h3>
-          <p>Smart street lights with motion sensors enhance security, save energy, and detect pedestrians for improved safety and efficiency.</p>
-        </div>
-      </div>   
-    </div>
-</section>
-<section id="Certificates">
-    <div class="certificates">
-        <h1>Certificates and Achievements</h1>
-    </div>
-    <div class="certificaterow">
-        <div class="certificatecol">
-            <div class="box">
-                <img src="google.png" class="googleimg" width="100%">
-                <p>Google It Automation</p>
-                <p>Completed the certification from coursera 
-                <p>in python</p>
-                <a href="https://coursera.org/share/282a91745da7249f4f6b63385b07a2a1" class="button" >certificate</a>
-            </div>
-        </div>
-        <div class="certificatecol">
-            <div class="box">
-                <img src="coursera.png" class="courseraimg" width="100%">
-                <p>Python for Data Science, AI & Development</p>
-                <p>Completed the certification from coursera</p>
-                <p>in python</p>
-                <a href="https://coursera.org/share/a85a7f1d9d894a5392e4297ea057db38" class="button" >certificate</a>
-            </div>
-        </div>
-        <div class="certificatecol">
-            <div class="box">
-                <img src="coursera.png" class="courseraimg" width="100%">
-                <p>C for everyone</p>
-                <p>Completed the certification from coursera </p>
-                <p>C Programming</p>
-                <a href="https://coursera.org/share/ed98a014e5362cad3b843270274718c8" class="button" >certificate</a>
-            </div>
-        </div>
-        <div class="certificatecol">
-            <div class="box">
-                <img src="leetcode.png" class="leetcodeimg" width="100%">
-                <p>solve 200+ Problems</p>
-                <p>Obtained badges in problem-solving and </p>
-                <p>Datastructures</p>
-                <a href="https://leetcode.com/pavan_24/" class="button" >Profile</a>
-            </div>
-        </div>
-    </div>
-</section>
-
 </html>
+
